@@ -7,29 +7,35 @@ function WelcomeScreen(props) {
 
 
     return (
-        <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-        <Text style={styles.text}>VENERATION CHURCH</Text>
-        <Image style={styles.logo} source={require('../assets/veneration-logo-size.png')} />
-        <View style={styles.loginButton}></View>
-        <View style={styles.registerButton}></View>
-        </ImageBackground>
+        <View style={styles.background}>
+            <Text style={styles.text}>VENERATION CHURCH</Text>
+            <Image style={styles.logo} source={require('../assets/veneration-circle.webp')} />
+            <View style={styles.loginButton}></View>
+            <View style={styles.registerButton}></View>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
+        flex: 1,
+    },
+    background: {
+        flex: 1,
+        justifyContent: "flex-end",
+        alignItems: 'center',
+        backgroundColor: "#141011"
     },
     image: {
-      flex: 1,
-      justifyContent: "flex-end",
-      alignItems: 'center'
+        flex: 1,
+        justifyContent: "flex-end",
+        alignItems: 'center'
     },
     logo: {
         width: 265,
-        height: 100,
+        height: 240,
         position: 'absolute',
-        top: 50,
+        top: 112,
     },
     loginButton: {
         width: '100%',
@@ -42,18 +48,18 @@ const styles = StyleSheet.create({
         backgroundColor: '#4ecdc4',
     },
     text: {
-      color: "black",
-      fontSize: 42,
-      lineHeight: 84,
-      fontWeight: "bold",
-      textAlign: "center",
-      backgroundColor: "white",
-      fontFamily: 'aktiv-grotesk',
-      width: 265,
-      height: 100,
-      position: 'absolute',
-      top: 50,
+        color: "black",
+        fontSize: 22,
+        lineHeight: 84,
+        fontWeight: "bold",
+        textAlign: "center",
+        backgroundColor: "white",
+        fontFamily: 'aktiv-grotesk',
+        width: '100%',
+        height: 100,
+        position: 'absolute',
+        top: 50,
     }
-  });
+});
 
 export default WelcomeScreen;
