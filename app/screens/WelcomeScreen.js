@@ -3,16 +3,17 @@ import { ImageBackground, StyleSheet, View, Text, SafeAreaView, Image } from 're
 
 function WelcomeScreen(props) {
 
-    const image = require('../assets/background.jpg');
+    const backgroundImage = require('../assets/background.jpg');
+    const logo = require('../assets/veneration-logo.webp')
 
 
     return (
-        <View style={styles.background}>
-            <Text style={styles.text}>VENERATION CHURCH</Text>
-            <Image style={styles.logo} source={require('../assets/veneration-circle.webp')} />
-            <View style={styles.loginButton}></View>
-            <View style={styles.registerButton}></View>
-        </View>
+            <ImageBackground style={styles.background} source={backgroundImage}>
+                {/* <Text style={styles.text}>VENERATION CHURCH</Text> */}
+                <Image style={styles.logo} source={logo} />
+                <View style={styles.loginButton}></View>
+                <View style={styles.registerButton}></View>
+            </ImageBackground>
     );
 }
 
@@ -24,7 +25,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "flex-end",
         alignItems: 'center',
-        backgroundColor: "#141011"
     },
     image: {
         flex: 1,
@@ -32,10 +32,10 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     logo: {
-        width: 265,
-        height: 240,
+        width: 292,
+        height: 100,
         position: 'absolute',
-        top: 112,
+        top: 134,
     },
     loginButton: {
         width: '100%',
