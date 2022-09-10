@@ -1,19 +1,21 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, View, Text, SafeAreaView, Image } from 'react-native';
+import { ImageBackground, StyleSheet, View, Text, SafeAreaView, Image, Button } from 'react-native';
 
 function WelcomeScreen(props) {
 
-    const backgroundImage = require('../assets/background.jpg');
-    const logo = require('../assets/veneration-logo.webp')
+    const backgroundImage = require('../assets/bg-chalkboard.webp');
+    const logo = require('../assets/v-logo-black.webp')
 
 
     return (
-            <ImageBackground style={styles.background} source={backgroundImage}>
-                {/* <Text style={styles.text}>VENERATION CHURCH</Text> */}
-                <Image style={styles.logo} source={logo} />
+        <ImageBackground style={styles.background} source={backgroundImage}>
+            {/* <Text style={styles.text}>VENERATION CHURCH</Text> */}
+            <Image style={styles.logo} source={logo} />
+            <View style={styles.buttonContainer}>
                 <View style={styles.loginButton}></View>
                 <View style={styles.registerButton}></View>
-            </ImageBackground>
+            </View>
+        </ImageBackground>
     );
 }
 
@@ -33,9 +35,15 @@ const styles = StyleSheet.create({
     },
     logo: {
         width: 292,
-        height: 100,
+        height: 300,
         position: 'absolute',
         top: 134,
+    },
+    buttonContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        width: '50%',
+        justifyContent: 'center'
     },
     loginButton: {
         width: '100%',
