@@ -1,8 +1,33 @@
 import React, { useState } from "react";
-import { Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
+import { Alert, Modal, StyleSheet, Text, Pressable, View, SafeAreaView, TextInput } from "react-native";
 
 const App = () => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [emailText, onChangeEmailText] = React.useState("");
+  const [passwordText, onChangePasswordText] = React.useState("");
+
+  const emailInput = (
+    <View>
+      <Text>Email:</Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeEmailText}
+        value={emailText}
+      />
+    </View>
+  );
+
+  const passwordInput = (
+    <View>
+      <Text>Password:</Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangePasswordText}
+        value={passwordText}
+      />
+    </View>
+  );
+
   return (
     <View style={styles.centeredView}>
       <Modal
@@ -16,12 +41,15 @@ const App = () => {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Hello World!</Text>
+            <SafeAreaView>
+              {emailInput}
+              {passwordInput}
+            </SafeAreaView>
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle}>Login</Text>
             </Pressable>
           </View>
         </View>

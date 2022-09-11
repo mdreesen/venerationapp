@@ -2,9 +2,7 @@ import React from 'react';
 import { ImageBackground, StyleSheet, View, Text, SafeAreaView, Image, Button } from 'react-native';
 
 // Import Components
-import LoginModal from '../components/loginModal';
-import SignupModal from '../components/signupModal';
-
+import Navigation from '../components/navigation';
 
 function WelcomeScreen(props) {
 
@@ -16,10 +14,7 @@ function WelcomeScreen(props) {
             <Image style={styles.logo} source={logo} />
             <View style={styles.buttonContainer}>
                 <View style={styles.loginButton}>
-                <LoginModal />
-                </View>
-                <View style={styles.registerButton}>
-                    <SignupModal/>
+                <Navigation/>
                 </View>
             </View>
         </ImageBackground>
@@ -49,7 +44,7 @@ const styles = StyleSheet.create({
     buttonContainer: {
         display: 'flex',
         flexDirection: 'row',
-        width: '50%',
+        width: '100%',
         justifyContent: 'center'
     },
     loginButton: {
