@@ -1,19 +1,26 @@
 import React from 'react';
 import { ImageBackground, StyleSheet, View, Text, SafeAreaView, Image, Button } from 'react-native';
 
+// Import Components
+import LoginModal from '../components/loginModal';
+import SignupModal from '../components/signupModal';
+
+
 function WelcomeScreen(props) {
 
     const backgroundImage = require('../assets/bg-chalkboard.webp');
     const logo = require('../assets/v-logo-black.webp')
 
-
     return (
         <ImageBackground style={styles.background} source={backgroundImage}>
-            {/* <Text style={styles.text}>VENERATION CHURCH</Text> */}
             <Image style={styles.logo} source={logo} />
             <View style={styles.buttonContainer}>
-                <View style={styles.loginButton}></View>
-                <View style={styles.registerButton}></View>
+                <View style={styles.loginButton}>
+                <LoginModal />
+                </View>
+                <View style={styles.registerButton}>
+                    <SignupModal/>
+                </View>
             </View>
         </ImageBackground>
     );
@@ -48,12 +55,12 @@ const styles = StyleSheet.create({
     loginButton: {
         width: '100%',
         height: 70,
-        backgroundColor: '#172d36',
+        // backgroundColor: '#172d36',
     },
     registerButton: {
         width: '100%',
         height: 70,
-        backgroundColor: '#4ecdc4',
+        // backgroundColor: '#4ecdc4',
     },
     text: {
         color: "black",
